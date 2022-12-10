@@ -1,4 +1,4 @@
-id: funneldrop_reproduce_locally
+id: send_track_event
 learningObjectives: 
 - Reproducing a bug locally 
 hints:
