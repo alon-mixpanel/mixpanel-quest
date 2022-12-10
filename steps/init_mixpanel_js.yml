@@ -7,7 +7,7 @@ startFlow:
   do:
   - actionId: bot_message
     params:
-      person: keen
+      person: ness
       messages:
       - text: "So, I really need to start understanding our user actions"
         delay: 2000
@@ -18,7 +18,7 @@ startFlow:
 trigger:
   type: user_message
   params: 
-    person: keen
+    person: ness
   flowNode:
     if:
       conditions:
@@ -31,7 +31,7 @@ trigger:
         do:
         - actionId: bot_message
           params:
-            person: keen
+            person: ness
             messages:
             - text: Good catch! I'll let the support team know.
               delay: 1300
@@ -40,7 +40,7 @@ trigger:
         do:
         - actionId: bot_message
           params:
-            person: keen
+            person: ness
             messages:
             - text: Try again! I'm sure you'll figure this out.
               delay: 2500
