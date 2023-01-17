@@ -1,12 +1,17 @@
-id: mixpanel_create_events
-title: Mixpanel event creation
-description: "You got to a new startup and your PM sends a request to track events with Mixpanel \n You'll need to go over and make sure you implement currectly including identifying uses"
-summary: "Learn by doing. Implement Mixpanel from scratch"
+id: mixpanel_drop_analysis
+title: Mixpanel Product Drop Analysis
+description: "We started using mixpanel, we need your help! Find the drop and help us narrow down the issue"
+summary: "Learn by doing. Analysis of data, narrow down exact problem, dig into cohorts and find the culprit "
 level: beginner
 steps:
-- init_mixpanel_js
-- send_track_event
-- identify_user
+- 1create_funnel_report
+- 2product_page_convert_time
+- 3item_drop_name
+- 4flow_report_url
+- 5details_pagename
+- 6product_name
+- 7cohort_analysis_source
+- 8conversion_rate
 duration: 1.5
 skills:
 - mixpanel
