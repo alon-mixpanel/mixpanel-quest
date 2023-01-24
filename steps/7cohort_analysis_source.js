@@ -1,4 +1,4 @@
-id: send_track_event
+id: 7cohort_analysis_source
 learningObjectives: 
 - Reproducing a bug locally 
 hints:
@@ -11,12 +11,10 @@ startFlow:
     params:
       person: keen
       messages:
-      - text: "Now that we know which users are affected, go ahead and fix the bug!"
+      - text: "I Suspect we did some campaign about that product that is killing our conversion."
         delay: 1300
-      - text: "Only, you know, don’t—you might break something"
+      - text: "Is there some common cohort among the users that are not converting? can you tell me if its an affiliate source? You can filter the sources I think."
         delay: 1400
-      - text: "It’s not that I don’t trust you, but the management definitely doesn’t, so please begin by **reproducing the bug locally** and sending me the **URL of the path** where you saw the issue. Then we’ll try to fix it on your machine, and only if it works, we’ll fix it in production."
-        delay: 3500
 trigger:
   type: user_message
   params: 
@@ -27,14 +25,14 @@ trigger:
       - conditionId: text_match_regex
         params:
           text: "${userMessageText}"
-          regex: ".*localhost.*@"
+          regex: ".*Google Shopping.*@"
       then:
         do:
         - actionId: bot_message
           params:
             person: keen
             messages:
-            - text: "Wow, that is indeed a problematic screen! Looks like we forgot about mobile devices when we created this screen."
+            - text: "Yeah, makes sense, we launched a campaign just last month on Google Shopping, might be an issue with this cohort not converting."
               delay: 1500
         - actionId: finish_step
       else:
@@ -43,5 +41,5 @@ trigger:
           params:
             person: keen
             messages:
-            - text: "Umm, that doesn't look right. Maybe it's a different URL?"
+            - text: "Umm, that doesn't look right."
               delay: 1400
