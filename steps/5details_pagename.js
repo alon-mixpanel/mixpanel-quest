@@ -1,4 +1,4 @@
-id: send_track_event
+id: 5details_pagename
 learningObjectives: 
 - Reproducing a bug locally 
 hints:
@@ -11,12 +11,8 @@ startFlow:
     params:
       person: keen
       messages:
-      - text: "Now that we know which users are affected, go ahead and fix the bug!"
+      - text: "Can you tell me the top funnel that users are dropping to?"
         delay: 1300
-      - text: "Only, you know, don’t—you might break something"
-        delay: 1400
-      - text: "It’s not that I don’t trust you, but the management definitely doesn’t, so please begin by **reproducing the bug locally** and sending me the **URL of the path** where you saw the issue. Then we’ll try to fix it on your machine, and only if it works, we’ll fix it in production."
-        delay: 3500
 trigger:
   type: user_message
   params: 
@@ -27,14 +23,14 @@ trigger:
       - conditionId: text_match_regex
         params:
           text: "${userMessageText}"
-          regex: ".*localhost.*@"
+          regex: ".*New detail page.*@"
       then:
         do:
         - actionId: bot_message
           params:
             person: keen
             messages:
-            - text: "Wow, that is indeed a problematic screen! Looks like we forgot about mobile devices when we created this screen."
+            - text: "Makes sense, they keep rotating in the same place and not going to the cart."
               delay: 1500
         - actionId: finish_step
       else:
@@ -43,5 +39,5 @@ trigger:
           params:
             person: keen
             messages:
-            - text: "Umm, that doesn't look right. Maybe it's a different URL?"
+            - text: "Umm, that doesn't look right."
               delay: 1400
