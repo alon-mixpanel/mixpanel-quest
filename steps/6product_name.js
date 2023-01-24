@@ -1,4 +1,4 @@
-id: send_track_event
+id: 6product_name
 learningObjectives: 
 - Reproducing a bug locally 
 hints:
@@ -11,12 +11,8 @@ startFlow:
     params:
       person: keen
       messages:
-      - text: "Now that we know which users are affected, go ahead and fix the bug!"
+      - text: "Thats too general for us, can you narrow down what page is it? I think we are passing the page name on the page loaded event, you can filter by name the events and see."
         delay: 1300
-      - text: "Only, you know, don’t—you might break something"
-        delay: 1400
-      - text: "It’s not that I don’t trust you, but the management definitely doesn’t, so please begin by **reproducing the bug locally** and sending me the **URL of the path** where you saw the issue. Then we’ll try to fix it on your machine, and only if it works, we’ll fix it in production."
-        delay: 3500
 trigger:
   type: user_message
   params: 
@@ -27,14 +23,14 @@ trigger:
       - conditionId: text_match_regex
         params:
           text: "${userMessageText}"
-          regex: ".*localhost.*@"
+          regex: ".*Harry potter DVD.*@"
       then:
         do:
         - actionId: bot_message
           params:
             person: keen
             messages:
-            - text: "Wow, that is indeed a problematic screen! Looks like we forgot about mobile devices when we created this screen."
+            - text: "They keep coming back to harry?! that is odd. Almost feels like they are under a spell.... Just kidding... Expecto Patronum!"
               delay: 1500
         - actionId: finish_step
       else:
@@ -43,5 +39,5 @@ trigger:
           params:
             person: keen
             messages:
-            - text: "Umm, that doesn't look right. Maybe it's a different URL?"
+            - text: "Umm, that doesn't look right. Maybe different item?"
               delay: 1400
