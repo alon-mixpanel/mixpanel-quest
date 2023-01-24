@@ -1,4 +1,4 @@
-id: send_track_event
+id: 8conversion_rate
 learningObjectives: 
 - Reproducing a bug locally 
 hints:
@@ -11,11 +11,11 @@ startFlow:
     params:
       person: keen
       messages:
-      - text: "Now that we know which users are affected, go ahead and fix the bug!"
+      - text: "Harry Potter DVD and Google shoppers. That doesnt mix right."
         delay: 1300
-      - text: "Only, you know, don’t—you might break something"
+      - text: "I need to know the exact convertion to understand how bad the issue is."
         delay: 1400
-      - text: "It’s not that I don’t trust you, but the management definitely doesn’t, so please begin by **reproducing the bug locally** and sending me the **URL of the path** where you saw the issue. Then we’ll try to fix it on your machine, and only if it works, we’ll fix it in production."
+      - text: "Can you tell me the exact conversion rate for the google shopping cohort that purchased the harry potter DVD?"
         delay: 3500
 trigger:
   type: user_message
@@ -27,14 +27,14 @@ trigger:
       - conditionId: text_match_regex
         params:
           text: "${userMessageText}"
-          regex: ".*localhost.*@"
+          regex: ".*1.11.*@"
       then:
         do:
         - actionId: bot_message
           params:
             person: keen
             messages:
-            - text: "Wow, that is indeed a problematic screen! Looks like we forgot about mobile devices when we created this screen."
+            - text: "Holy Cow harry! That is a huge issue. BUT! Thats the final issue. I think we found the issue and the problematic cohort and product. Thank you! I'll let our marketing team know. Thanks!"
               delay: 1500
         - actionId: finish_step
       else:
@@ -43,5 +43,5 @@ trigger:
           params:
             person: keen
             messages:
-            - text: "Umm, that doesn't look right. Maybe it's a different URL?"
+            - text: "Umm, that doesn't look right. Seems a bit off."
               delay: 1400
