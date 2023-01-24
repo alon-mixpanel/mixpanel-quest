@@ -1,6 +1,6 @@
-id: send_track_event
+id: 2product_page_convert_time
 learningObjectives: 
-- Reproducing a bug locally 
+- Find the right time and frequency in a funnel report 
 hints:
 - All modern web browsers can show you what your website looks like on mobile, so
   you'll be able to easily debug and develop for mobile. You can use the developer
@@ -11,11 +11,11 @@ startFlow:
     params:
       person: keen
       messages:
-      - text: "Now that we know which users are affected, go ahead and fix the bug!"
+      - text: "Now that we see the funnel properly I see a big drop in our funnel."
         delay: 1300
-      - text: "Only, you know, don’t—you might break something"
+      - text: "I want to understand whats leading to it, I've mentioned that we've changed some things in the UX that might affect it on the product item page."
         delay: 1400
-      - text: "It’s not that I don’t trust you, but the management definitely doesn’t, so please begin by **reproducing the bug locally** and sending me the **URL of the path** where you saw the issue. Then we’ll try to fix it on your machine, and only if it works, we’ll fix it in production."
+      - text: "I see a drop in our purchase funnel between item details page and add the cart, we’ve done some changes to our product pages and we think that there might be some issue can you tell me whats the number of product pages it takes to convert to add to cart? "
         delay: 3500
 trigger:
   type: user_message
@@ -24,17 +24,19 @@ trigger:
   flowNode:
     if:
       conditions:
-      - conditionId: text_match_regex
+      - conditionId: text_contains_strings
         params:
           text: "${userMessageText}"
-          regex: ".*localhost.*@"
+          strings:
+            - "3"
+            - "31.73%
       then:
         do:
         - actionId: bot_message
           params:
             person: keen
             messages:
-            - text: "Wow, that is indeed a problematic screen! Looks like we forgot about mobile devices when we created this screen."
+            - text: "Wow, that is indeed a problem. They are lingering way too much on that page."
               delay: 1500
         - actionId: finish_step
       else:
@@ -43,5 +45,5 @@ trigger:
           params:
             person: keen
             messages:
-            - text: "Umm, that doesn't look right. Maybe it's a different URL?"
+            - text: "Umm, That doesnt look right, maybe a different event or frequencey?"
               delay: 1400
