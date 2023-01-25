@@ -20,10 +20,13 @@ trigger:
   flowNode:
     if:
       conditions:
-      - conditionId: text_match_regex
+      - conditionId: text_contains_strings
         params:
           text: "${userMessageText}"
-          regex: ".*New detail page.*@"
+          strings:
+            - New detail page
+            - detail page
+            - new detail page
       then:
         do:
         - actionId: bot_message
