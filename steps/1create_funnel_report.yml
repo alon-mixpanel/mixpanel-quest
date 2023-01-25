@@ -24,10 +24,12 @@ trigger:
   flowNode:
     if:
       conditions:
-      - conditionId: text_match_regex
+      - conditionId: text_contains_strings
         params:
           text: "${userMessageText}"
-          regex: ".*284637/app/funnels.*@"
+          strings:
+            - mixpanel.com
+            - /app/funnels
       then:
         do:
         - actionId: bot_message
