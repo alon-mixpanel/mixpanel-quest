@@ -20,10 +20,12 @@ trigger:
   flowNode:
     if:
       conditions:
-      - conditionId: text_match_regex
+      - conditionId: text_contains_strings
         params:
           text: "${userMessageText}"
-          regex: ".*Harry potter DVD.*@"
+          strings:
+            - Harry potter DVD
+            - Harry potter
       then:
         do:
         - actionId: bot_message
