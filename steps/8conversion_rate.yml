@@ -24,10 +24,13 @@ trigger:
   flowNode:
     if:
       conditions:
-      - conditionId: text_match_regex
+      - conditionId: text_contains_strings
         params:
           text: "${userMessageText}"
-          regex: ".*1.11.*@"
+          strings:
+            - 1.11
+            - 1.11%
+            - 1%
       then:
         do:
         - actionId: bot_message
