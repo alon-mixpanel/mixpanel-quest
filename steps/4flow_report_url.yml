@@ -27,7 +27,7 @@ trigger:
       - conditionId: text_contains_strings
         params:
           text: "${userMessageText}"
-            strings:
+          strings:
             - 284637/app/flows
             - mixpanel.com
       then:
