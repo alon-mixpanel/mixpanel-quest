@@ -30,7 +30,6 @@ trigger:
            strings:
             - Harry potter
             - Harry potter DVD
-            - android
       then:
         do:
         - actionId: bot_message
