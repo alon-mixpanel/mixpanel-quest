@@ -3,6 +3,7 @@ title: Mixpanel Product Drop Analysis
 description: "We started using mixpanel, we need your help! Find the drop and help us narrow down the issue"
 summary: "Learn by doing. Analysis of data, narrow down exact problem, dig into cohorts and find the culprit "
 level: beginner
+shouldResetRepo: false
 steps:
 - 1create_funnel_report
 - 2product_page_convert_time
