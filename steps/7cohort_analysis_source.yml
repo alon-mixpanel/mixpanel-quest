@@ -22,10 +22,13 @@ trigger:
   flowNode:
     if:
       conditions:
-      - conditionId: text_match_regex
+      - conditionId: text_contains_strings
         params:
           text: "${userMessageText}"
-          regex: ".*Google Shopping.*@"
+          strings:
+            - Google shopping
+            - Google
+            - google shopping
       then:
         do:
         - actionId: bot_message
