@@ -1,0 +1,39 @@
+id: 5_funnel_conversion
+learningObjectives: 
+- [Some learning objectives here]
+hints:
+- [Some hints here]
+startFlow:
+  do:
+  - actionId: bot_message
+    params:
+      person: keen
+      messages:
+      - text: "Has that gone up or down compared to last month? (compare to past)"
+trigger:
+  type: user_message
+  params: 
+    person: keen
+  flowNode:
+    if:
+      conditions:
+      - conditionId: text_contains_strings
+        params:
+          text: "${userMessageText}"
+          strings:
+            - "Down"
+      then:
+        do:
+        - actionId: bot_message
+          params:
+            person: keen
+            messages:
+            - text: "Oh, that's not good. We need to figure out why."
+        - actionId: finish_step
+      else:
+        do:
+        - actionId: bot_message
+          params:
+            person: keen
+            messages:
+            - text: "Not quite, try again"

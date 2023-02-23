@@ -1,0 +1,39 @@
+id: 4_delivery_fee
+learningObjectives: 
+- [Some learning objectives here]
+hints:
+- [Some hints here]
+startFlow:
+  do:
+  - actionId: bot_message
+    params:
+      person: keen
+      messages:
+      - text: "What’s the Avg delivery fee for complete purchase?"
+trigger:
+  type: user_message
+  params: 
+    person: keen
+  flowNode:
+    if:
+      conditions:
+      - conditionId: text_contains_strings
+        params:
+          text: "${userMessageText}"
+          strings:
+            - "17.9"
+      then:
+        do:
+        - actionId: bot_message
+          params:
+            person: keen
+            messages:
+            - text: "Got it, that's the average delivery fee for complete purchase."
+        - actionId: finish_step
+      else:
+        do:
+        - actionId: bot_message
+          params:
+            person: keen
+            messages:
+            - text: "Not quite, try again"

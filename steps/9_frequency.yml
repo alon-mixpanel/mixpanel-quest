@@ -1,0 +1,41 @@
+id: 9_frequency
+learningObjectives: 
+- [Some learning objectives here]
+hints:
+- [Some hints here]
+startFlow:
+  do:
+  - actionId: bot_message
+    params:
+      person: keen
+      messages:
+      - text: "How many item pages do people look at before they finish their purchase?"
+
+trigger:
+  type: user_message
+  params: 
+    person: keen
+  flowNode:
+    if:
+      conditions:
+      - conditionId: text_contains_strings
+        params:
+          text: "${userMessageText}"
+          strings:
+            - "seven"
+            - "7"
+      then:
+        do:
+        - actionId: bot_message
+          params:
+            person: keen
+            messages:
+            - text: "Interesting, that's good to know."
+        - actionId: finish_step
+      else:
+        do:
+        - actionId: bot_message
+          params:
+            person: keen
+            messages:
+            - text: "Not quite, try again"
