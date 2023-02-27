@@ -1,0 +1,41 @@
+id: 2_completed_purchase
+learningObjectives: 
+- [Some learning objectives here]
+hints:
+- [Some hints here]
+startFlow:
+  do:
+  - actionId: bot_message
+    params:
+      person: keen
+      messages:
+      - text: "Now that we see the funnel properly I see a big drop in our funnel."
+      - text: "How many users completed purchase in the last 30 days?"
+trigger:
+  type: user_message
+  params: 
+    person: keen
+  flowNode:
+    if:
+      conditions:
+      - conditionId: text_contains_strings
+        params:
+          text: "${userMessageText}"
+          strings:
+            - "30"
+            - "thirty"
+      then:
+        do:
+        - actionId: bot_message
+          params:
+            person: keen
+            messages:
+            - text: "Wow, that is indeed a problem. There're very few people that manage to complete the action."
+        - actionId: finish_step
+      else:
+        do:
+        - actionId: bot_message
+          params:
+            person: keen
+            messages:
+            - text: "Umm, That doesnt look right, can you check again?"
