@@ -1,0 +1,51 @@
+id: 7_time_to_convert
+learningObjectives: 
+- "See more functions in funnel analysis to help answer better questions more enriched questions."
+hints:
+- "Click on 'Funnel steps' on the right hand and select the 'Time to convert'"
+- "Still stuck? Try our [docs](https://help.mixpanel.com/hc/en-us/articles/360001333826-Insights-Report-Overview) or 'Request a solution'"
+
+startFlow:
+  do:
+  - actionId: bot_message
+    params:
+      person: keen
+      messages:
+      - text: "We've been working on improving the experience from item page to purchase, previously we had 1.42% of users who completed it in 1 minute, has that gone up or down?"
+        delay: 3500
+trigger:
+  type: user_message
+  params: 
+    person: keen
+  flowNode:
+    if:
+      conditions:
+      - conditionId: text_contains_strings
+        params:
+          text: "${userMessageText}"
+          strings:
+            - "up"
+      then:
+        do:
+        - actionId: bot_message
+          params:
+            person: keen
+            messages:
+            - text: "Interesting, that's good to know."
+        - actionId: finish_step
+      else:
+        do:
+        - actionId: bot_message
+          params:
+            person: keen
+            messages:
+            - text: "Not quite, try again"
+
+solution: 
+  do:
+    - actionId: bot_message
+      params:
+        person: keen
+        messages: 
+          - text: "Here's the end result https://mixpanel.com/s/7e127"
+

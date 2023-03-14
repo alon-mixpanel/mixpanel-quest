@@ -1,15 +1,22 @@
 id: 5_funnel_conversion
 learningObjectives: 
-- [Some learning objectives here]
+- "See how to easily find drops in the product and deep dive into it"
 hints:
-- [Some hints here]
+- "Click on 'Compare to past' next to the date filter and find different ways to compare your data"
+- "Still stuck? Try our [docs](https://help.mixpanel.com/hc/en-us/articles/360019982652) or 'Request a solution'"
 startFlow:
   do:
   - actionId: bot_message
     params:
       person: keen
       messages:
-      - text: "Has that gone up or down compared to last month? (compare to past)"
+      - text: "First let's see if the order conversion has gone up or down compared to last month?"
+        delay: 3500
+      - text: "For that we'll try a different report type. Click on the funnels icon or select Funnels from the Reports menu."
+        delay: 2500
+      - text: "First step select the 'Item Detail Page' event and second is the 'Complete Purchase'"
+        delay: 2500
+      - text: "So what do you see? Up or Down?"
 trigger:
   type: user_message
   params: 
@@ -37,3 +44,12 @@ trigger:
             person: keen
             messages:
             - text: "Not quite, try again"
+
+solution: 
+  do:
+    - actionId: bot_message
+      params:
+        person: keen
+        messages: 
+          - text: "Here's the end result https://mixpanel.com/s/351lUN or you can view as a funnel https://mixpanel.com/s/2ihGdm"
+

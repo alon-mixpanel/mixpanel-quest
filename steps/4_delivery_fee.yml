@@ -1,15 +1,24 @@
 id: 4_delivery_fee
 learningObjectives: 
-- [Some learning objectives here]
+- "How to get deeper insights with avg per property"
 hints:
-- [Some hints here]
+- "First let's move our breakdown to the filter and select Tuesday. You can drag the breakdown or remove and create as a filter"
+- "Now go to the 'Complete Purchase' event and Click on the 'totals' under it to select 'Aggregate Properties' and just select Average that will promt to select a property"
+- "Still stuck? Try our [docs](https://help.mixpanel.com/hc/en-us/articles/360001333826-Insights-Report-Overview) or 'Request a solution'"
 startFlow:
   do:
   - actionId: bot_message
     params:
       person: keen
       messages:
-      - text: "What’s the Avg delivery fee for complete purchase?"
+      - text: "So now that we can get some campaigns ready let's see if it matches our business KPIs."
+        delay: 3500
+      - text: "For orders that were done on Tuesday's we want to know the Avg delivery fee"
+        delay: 3500
+      - text: "If it's over $8 just not sure it will be sustainble"
+        delay: 3500
+      - text: "Got any number for us? (Crossing fingers it makes sense)"
+        delay: 1500
 trigger:
   type: user_message
   params: 
@@ -21,14 +30,19 @@ trigger:
         params:
           text: "${userMessageText}"
           strings:
-            - "17.9"
+            - "10"
       then:
         do:
         - actionId: bot_message
           params:
             person: keen
             messages:
-            - text: "Got it, that's the average delivery fee for complete purchase."
+            - text: "that's what I got here https://mixpanel.com/s/3BhZ2U"
+              delay: 3500
+            - text: "It's a bit higher then what we expected. Please flag this to Jessica from Ops (not really.. Jessica does't exist) so they can make sure to understand what's going on"
+              delay: 3500
+            - text: "Other than waiting for ops we can try to improve the conversion rate of orders. Let's check what's going on there"
+              delay: 1500
         - actionId: finish_step
       else:
         do:
@@ -37,3 +51,12 @@ trigger:
             person: keen
             messages:
             - text: "Not quite, try again"
+
+solution: 
+  do:
+    - actionId: bot_message
+      params:
+        person: keen
+        messages: 
+          - text: "Here's the end result https://mixpanel.com/s/3BhZ2U"
+

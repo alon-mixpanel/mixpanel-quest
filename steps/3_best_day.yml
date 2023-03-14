@@ -1,15 +1,19 @@
 id: 3_best_day
 learningObjectives: 
-- [Some learning objectives here]
+- "Get to know some cool breakdown features"
 hints:
-- [Some hints here]
+- "Go back into Mixpanel and find “Breakdown” in the left nav to use the search bar and type in “by Day”"
+- "Select “Day of the week”, then go back to “# Metric”, select “Bar” to see the bar graph by day and find the most converting day of the week. That’s your answer!"
 startFlow:
   do:
   - actionId: bot_message
     params:
       person: keen
       messages:
-      - text: "Running campaigns and want to know what day of the week is the most converting"
+      - text: "Our marketing team was working on optimizing the campaigns and want to know what day of the week is the most converting."
+        delay: 3500
+      - text: "Create a breakdown to help out with what day has the most 'Complete Purchase'"
+        delay: 3500
 trigger:
   type: user_message
   params: 
@@ -29,7 +33,11 @@ trigger:
           params:
             person: keen
             messages:
-            - text: "That's interesting, good to know."
+            - text: "Cool. That's exactly what we got"
+              delay: 3500
+            - text: "We used this breakdown to get it. Magic, isn't it?"
+              delay: 3500
+            - text: "https://mixpanel.com/s/RoH8c"
         - actionId: finish_step
       else:
         do:
@@ -37,4 +45,13 @@ trigger:
           params:
             person: keen
             messages:
-            - text: "Not quite, try again"
+            - text: "Not quite, try to breakdown the order completed by date and then by day of the week"
+
+solution: 
+  do:
+    - actionId: bot_message
+      params:
+        person: keen
+        messages: 
+          - text: "Here's the end result https://mixpanel.com/s/RoH8c"
+

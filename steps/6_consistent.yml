@@ -1,0 +1,57 @@
+id: 6_consistent
+learningObjectives: 
+- "See more functions in funnel analysis to help answer better questions more enriched questions."
+hints:
+- "Click on 'Funnel steps' on the right hand and select the 'Funnel Trends'"
+- "Still stuck? Try our [docs](https://help.mixpanel.com/hc/en-us/articles/360001333826-Insights-Report-Overview) or 'Request a solution'"
+
+startFlow:
+  do:
+  - actionId: bot_message
+    params:
+      person: keen
+      messages:
+      - text: "Is the drop consistent? Do we have any trends that show why this conversion is lower?"
+        delay: 3500
+      - text: "Let's make sure to look at the trend and not just funnel steps"
+        delay: 3500
+      - text: "So did you see anything that skued the trend? (yes/no)"
+        delay: 1500
+trigger:
+  type: user_message
+  params: 
+    person: keen
+  flowNode:
+    if:
+      conditions:
+      - conditionId: text_contains_strings
+        params:
+          text: "${userMessageText}"
+          strings:
+            - "Yes"
+      then:
+        do:
+        - actionId: bot_message
+          params:
+            person: keen
+            messages:
+            - text: "Interesting, that's good to know. Now I know what we need to focus as the product team"
+              delay: 3500
+            - text: "If you could help me out with two last answers so we can have a benchmark for our next features."
+        - actionId: finish_step
+      else:
+        do:
+        - actionId: bot_message
+          params:
+            person: keen
+            messages:
+            - text: "Not quite, try again"
+
+solution: 
+  do:
+    - actionId: bot_message
+      params:
+        person: keen
+        messages: 
+          - text: "Here's the end result https://mixpanel.com/s/16ZKnA"
+

@@ -1,0 +1,55 @@
+id: 8_frequency
+learningObjectives: 
+- "Understand what frequency can help product teams with"
+hints:
+- "Click on 'Funnel step' on the right hand and select the 'Frequency'"
+- "Still stuck? Try our [docs](https://help.mixpanel.com/hc/en-us/articles/360001333826-Insights-Report-Overview) or 'Request a solution'"
+
+startFlow:
+  do:
+  - actionId: bot_message
+    params:
+      person: keen
+      messages:
+      - text: "How many item pages do people look at before they finish their purchase?"
+        delay: 3500
+      - text: "This can help us understand if people find the 'right' product fast or they go through a few pages before"
+        delay: 3500
+      - text: "What is the frequency with the highest % of conversions"
+trigger:
+  type: user_message
+  params: 
+    person: keen
+  flowNode:
+    if:
+      conditions:
+      - conditionId: text_contains_strings
+        params:
+          text: "${userMessageText}"
+          strings:
+            - "two"
+            - "2"
+      then:
+        do:
+        - actionId: bot_message
+          params:
+            person: keen
+            messages:
+            - text: "Interesting, that's good to know. I think we're set for now. Ping you when I need anything else. Thanks for everything!"
+        - actionId: finish_step
+      else:
+        do:
+        - actionId: bot_message
+          params:
+            person: keen
+            messages:
+            - text: "Not quite, try again"
+
+solution: 
+  do:
+    - actionId: bot_message
+      params:
+        person: keen
+        messages: 
+          - text: "Here's the end result https://mixpanel.com/s/2wmAES"
+
