@@ -36,6 +36,10 @@ trigger:
             person: keen
             messages:
             - text: "Interesting, that's good to know. I think we're set for now. Ping you when I need anything else. Thanks for everything!"
+              delay: 3500
+            - text: "![](https://media1.giphy.com/media/g9582DNuQppxC/giphy.gif)"
+              delay: 3500
+            - text: "Congratulations on finishing your first Mixpanel quest! Head over to [Mixpanel](https://mixpanel.com/home/) to learn more."
         - actionId: finish_step
       else:
         do:
@@ -43,7 +47,7 @@ trigger:
           params:
             person: keen
             messages:
-            - text: "Not quite, try again"
+            - text: "Not quite, try again, you're almost there!"
 
 solution: 
   do:
