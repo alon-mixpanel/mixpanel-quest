@@ -56,4 +56,6 @@ solution:
         messages: 
           - text: "The answer is 'Yes'"
           - text: "Here's the end result https://mixpanel.com/s/16ZKnA"
-
+            delay: 2500
+          - text: "Still not working for you. Try they #mixpanel-quest slack channel in our [community](https://community.mixpanel.com/)"
+            delay: 2500

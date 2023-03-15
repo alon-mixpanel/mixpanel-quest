@@ -39,7 +39,7 @@ trigger:
             messages:
             - text: "that's what I got here https://mixpanel.com/s/3BhZ2U"
               delay: 3500
-            - text: "It's a bit higher then what we expected. Please flag this to Jessica from Ops (not really.. Jessica does't exist) so they can make sure to understand what's going on"
+            - text: "It's a bit higher than what we expected. Please flag this to Jessica from Ops (not really.. Jessica doesn't exist) so they can make sure to understand what's going on"
               delay: 3500
             - text: "Other than waiting for ops we can try to improve the conversion rate of orders. Let's check what's going on there"
               delay: 1500
@@ -59,4 +59,6 @@ solution:
         person: lucca
         messages: 
           - text: "Here's the end result https://mixpanel.com/s/3BhZ2U"
-
+            delay: 2500
+          - text: "Still not working for you. Try they #mixpanel-quest slack channel in our [community](https://community.mixpanel.com/)"
+            delay: 2500
