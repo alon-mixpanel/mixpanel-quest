@@ -1,7 +1,7 @@
 id: mixpanel_product_analyst
 title: Mixpanel Product Analyst
 subtitle: Come help us gain insights from our data
-description: "We started using mixpanel, we need your help! Find the drop and help us narrow down the issue"
+description: "We're using mixpanel for product analysis and we need your help!"
 summary: "Learn by doing. Analysis of data, narrow down exact problem, dig into cohorts and find the culprit - Learn to create some of the basic reports in Mixpanel. If you want to start with our learning videos feel free [here](https://mixpanelworkshops.teachable.com/)"
 level: beginner
 repository: 
