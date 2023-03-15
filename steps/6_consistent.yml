@@ -15,7 +15,7 @@ startFlow:
         delay: 3500
       - text: "Let's make sure to look at the trend and not just funnel steps"
         delay: 3500
-      - text: "So did you see anything that skued the trend? (yes/no)"
+      - text: "So did you see anything that skewed the trend? (yes/no)"
         delay: 1500
 trigger:
   type: user_message
@@ -29,6 +29,7 @@ trigger:
           text: "${userMessageText}"
           strings:
             - "Yes"
+            - "Drop"
       then:
         do:
         - actionId: bot_message
@@ -53,5 +54,6 @@ solution:
       params:
         person: lucca
         messages: 
+          - text: "The answer is 'Yes'"
           - text: "Here's the end result https://mixpanel.com/s/16ZKnA"
 

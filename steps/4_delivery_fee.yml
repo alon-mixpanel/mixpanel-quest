@@ -13,7 +13,7 @@ startFlow:
       messages:
       - text: "So now that we can get some campaigns ready let's see if it matches our business KPIs."
         delay: 3500
-      - text: "For orders that were done on Tuesday's we want to know the Avg delivery fee"
+      - text: "For orders that were done on Tuesdays we want to know the Avg delivery fee"
         delay: 3500
       - text: "If it's over $8 just not sure it will be sustainble"
         delay: 3500
