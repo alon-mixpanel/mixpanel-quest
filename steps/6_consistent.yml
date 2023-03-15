@@ -9,7 +9,7 @@ startFlow:
   do:
   - actionId: bot_message
     params:
-      person: keen
+      person: lucca
       messages:
       - text: "Is the drop consistent? Do we have any trends that show why this conversion is lower?"
         delay: 3500
@@ -20,7 +20,7 @@ startFlow:
 trigger:
   type: user_message
   params: 
-    person: keen
+    person: lucca
   flowNode:
     if:
       conditions:
@@ -33,7 +33,7 @@ trigger:
         do:
         - actionId: bot_message
           params:
-            person: keen
+            person: lucca
             messages:
             - text: "Interesting, that's good to know. Now I know what we need to focus as the product team"
               delay: 3500
@@ -43,7 +43,7 @@ trigger:
         do:
         - actionId: bot_message
           params:
-            person: keen
+            person: lucca
             messages:
             - text: "Not quite, try again"
 
@@ -51,7 +51,7 @@ solution:
   do:
     - actionId: bot_message
       params:
-        person: keen
+        person: lucca
         messages: 
           - text: "Here's the end result https://mixpanel.com/s/16ZKnA"
 

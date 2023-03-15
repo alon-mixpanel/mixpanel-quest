@@ -9,14 +9,14 @@ startFlow:
   do:
   - actionId: bot_message
     params:
-      person: keen
+      person: lucca
       messages:
       - text: "We've been working on improving the experience from item page to purchase, previously we had 1.42% of users who completed it in 1 minute, has that gone up or down?"
         delay: 3500
 trigger:
   type: user_message
   params: 
-    person: keen
+    person: lucca
   flowNode:
     if:
       conditions:
@@ -29,7 +29,7 @@ trigger:
         do:
         - actionId: bot_message
           params:
-            person: keen
+            person: lucca
             messages:
             - text: "Interesting, that's good to know."
         - actionId: finish_step
@@ -37,7 +37,7 @@ trigger:
         do:
         - actionId: bot_message
           params:
-            person: keen
+            person: lucca
             messages:
             - text: "Not quite, try again"
 
@@ -45,7 +45,7 @@ solution:
   do:
     - actionId: bot_message
       params:
-        person: keen
+        person: lucca
         messages: 
           - text: "Here's the end result https://mixpanel.com/s/7e127"
 

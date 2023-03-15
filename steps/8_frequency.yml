@@ -9,7 +9,7 @@ startFlow:
   do:
   - actionId: bot_message
     params:
-      person: keen
+      person: lucca
       messages:
       - text: "How many item pages do people look at before they finish their purchase?"
         delay: 3500
@@ -19,7 +19,7 @@ startFlow:
 trigger:
   type: user_message
   params: 
-    person: keen
+    person: lucca
   flowNode:
     if:
       conditions:
@@ -33,7 +33,7 @@ trigger:
         do:
         - actionId: bot_message
           params:
-            person: keen
+            person: lucca
             messages:
             - text: "Interesting, that's good to know. I think we're set for now. Ping you when I need anything else. Thanks for everything!"
               delay: 3500
@@ -45,7 +45,7 @@ trigger:
         do:
         - actionId: bot_message
           params:
-            person: keen
+            person: lucca
             messages:
             - text: "Not quite, try again, you're almost there!"
 
@@ -53,7 +53,7 @@ solution:
   do:
     - actionId: bot_message
       params:
-        person: keen
+        person: lucca
         messages: 
           - text: "Here's the end result https://mixpanel.com/s/2wmAES"
 

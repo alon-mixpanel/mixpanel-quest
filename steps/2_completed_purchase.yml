@@ -9,31 +9,31 @@ startFlow:
   do:
   - actionId: bot_message
     params:
-      person: keen
+      person: lucca
       messages:
       - text: "Welcome! 
               As a new product analyst using [Mixpanel](https://mixpanel.com/home/), you’ll need to get ramped up quickly.
               This quest will walk you through the basic steps of how to use Mixpanel- a powerful, self-serve product analytics tool that helps businesses like Yelp, Uber, and Docusign convert, engage, and retain more users."
-        delay: 4500
+        delay: 5500
       - text: "We’ll include prompts along the way, so you can easily find what you’re looking for in Mixpanel, type your answers here, and unlock the next exploration. 
               If you ever feel stuck, just click the “Request a hint” and we’ll provide you with a hint."
-        delay: 4500
+        delay: 6500
       - text: "Learn to create some of the basic reports in Mixpanel. If you want to start with our learning videos feel free [here](https://mixpanelworkshops.teachable.com/)"
-        delay: 2500
+        delay: 6500
       - text: "Let's start with the basics. Each report can answer different kinds of product questions with the events that are sent from our servers"
-        delay: 2500
+        delay: 5500
       - text: "An event is a data point that represents an interaction between a user and your product. Events can be a wide range of interactions. For example, a music service might track a new user signing up for an account or a user playing a song as an event."
-        delay: 2500
+        delay: 4500
       - text: "Your first quest is to create and send us the answer to the following question:"
-        delay: 2500
+        delay: 4500
       - text: "We'll start with the Insights report. [Here's access to our project](https://mixpanel.com/s/wHUNl) (you'll need a free account to access the demo dataset)"
-        delay: 2500
+        delay: 4500
       - text: "How many users did the 'Completed purchase' in the last 30 days?"
-        delay: 2500
+        delay: 4500
 trigger:
   type: user_message
   params: 
-    person: keen
+    person: lucca
   flowNode:
     if:
       conditions:
@@ -48,7 +48,7 @@ trigger:
         do:
         - actionId: bot_message
           params:
-            person: keen
+            person: lucca
             messages:
             - text: "Great job! Exactly what we needed."
         - actionId: finish_step
@@ -56,13 +56,13 @@ trigger:
         do:
         - actionId: bot_message
           params:
-            person: keen
+            person: lucca
             messages:
             - text: "Umm, That doesnt look right, can you check again? We're looking for unique count."
 solution: 
   do:
     - actionId: bot_message
       params:
-        person: keen
+        person: lucca
         messages: 
           - text: "Here's the end result https://mixpanel.com/s/4229bM"

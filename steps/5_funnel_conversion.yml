@@ -8,19 +8,20 @@ startFlow:
   do:
   - actionId: bot_message
     params:
-      person: keen
+      person: lucca
       messages:
       - text: "First let's see if the order conversion has gone up or down compared to last month?"
         delay: 3500
       - text: "For that we'll try a different report type. Click on the funnels icon or select Funnels from the Reports menu."
-        delay: 2500
+        delay: 3500
       - text: "First step select the 'Item Detail Page' event and second is the 'Complete Purchase'"
         delay: 2500
       - text: "So what do you see? Up or Down?"
+        delay: 2500
 trigger:
   type: user_message
   params: 
-    person: keen
+    person: lucca
   flowNode:
     if:
       conditions:
@@ -33,7 +34,7 @@ trigger:
         do:
         - actionId: bot_message
           params:
-            person: keen
+            person: lucca
             messages:
             - text: "Oh, that's not good. We need to figure out why."
         - actionId: finish_step
@@ -41,7 +42,7 @@ trigger:
         do:
         - actionId: bot_message
           params:
-            person: keen
+            person: lucca
             messages:
             - text: "Not quite, try again"
 
@@ -49,7 +50,7 @@ solution:
   do:
     - actionId: bot_message
       params:
-        person: keen
+        person: lucca
         messages: 
           - text: "Here's the end result https://mixpanel.com/s/351lUN or you can view as a funnel https://mixpanel.com/s/2ihGdm"
 
