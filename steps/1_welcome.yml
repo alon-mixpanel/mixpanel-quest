@@ -35,9 +35,9 @@ trigger:
         params:
           text: "${userMessageText}"
           strings:
-            - "40"
-            - "40.04K"
-            - "Fourty"
+            - "start"
+            - "yes"
+            - "go"
       then:
         do:
         - actionId: bot_message
