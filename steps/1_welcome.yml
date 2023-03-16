@@ -1,0 +1,64 @@
+id: 2_completed_purchase
+learningObjectives: 
+- "Learn to create some of the basic reports in Mixpanel. If you want to start with our learning videos feel free [here](https://mixpanelworkshops.teachable.com/)"
+hints:
+- "Write 'Next' or 'Yes' in the chat."
+startFlow:
+  do:
+  - actionId: bot_message
+    params:
+      person: lucca
+      messages:
+        delay: 1000
+      - text: "Welcome! 
+              As a new product analyst using [Mixpanel](https://mixpanel.com/home/), you’ll need to get ramped up quickly.
+              This quest will walk you through the basic steps of how to use Mixpanel- a powerful, self-serve product analytics tool that helps businesses like Yelp, Uber, and Docusign convert, engage, and retain more users."
+        delay: 7500
+      - text: "We’ll include prompts along the way, so you can easily find what you’re looking for in Mixpanel, type your answers here, and unlock the next exploration. 
+              If you ever feel stuck, just click the “Request a hint” and we’ll provide you with a hint."
+        delay: 7500
+      - text: "Learn to create some of the basic reports in Mixpanel. If you want to start with our learning videos feel free [here](https://mixpanelworkshops.teachable.com/)"
+        delay: 6500
+      - text: "Let's start with the basics. Each report can answer different kinds of product questions with the events that are sent from our servers"
+        delay: 5500
+      - text: "An event is a data point that represents an interaction between a user and your product. Events can be a wide range of interactions. For example, a music service might track a new user signing up for an account or a user playing a song as an event."
+        delay: 4500
+      - text: "Let us know when you're ready (Type yes or start in the chat)"
+        delay: 4500
+trigger:
+  type: user_message
+  params: 
+    person: lucca
+  flowNode:
+    if:
+      conditions:
+      - conditionId: text_contains_strings
+        params:
+          text: "${userMessageText}"
+          strings:
+            - "40"
+            - "40.04K"
+            - "Fourty"
+      then:
+        do:
+        - actionId: bot_message
+          params:
+            person: lucca
+            messages:
+            - text: "Great job! Exactly what we needed."
+        - actionId: finish_step
+      else:
+        do:
+        - actionId: bot_message
+          params:
+            person: lucca
+            messages:
+            - text: "Umm, That doesnt look right, can you check again? We're looking for unique count."
+solution: 
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages: 
+          - text: "Still not working for you. Try they #mixpanel-quest slack channel in our [community](https://community.mixpanel.com/)"
+            delay: 2500
