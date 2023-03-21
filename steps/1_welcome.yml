@@ -12,6 +12,7 @@ startFlow:
       - text: "Welcome! 
               As a new product analyst using [Mixpanel](https://mixpanel.com/home/), you’ll need to get ramped up quickly.
               This quest will walk you through the basic steps of how to use Mixpanel- a powerful, self-serve product analytics tool that helps businesses like Yelp, Uber, and Docusign convert, engage, and retain more users."
+        delay: 0
       - text: "We’ll include prompts along the way, so you can easily find what you’re looking for in Mixpanel, type your answers here, and unlock the next exploration. 
               If you ever feel stuck, just click the “Request a hint” and we’ll provide you with a hint."
         delay: 6500
