@@ -14,9 +14,9 @@ startFlow:
               This quest will walk you through the basic steps of how to use Mixpanel- a powerful, self-serve product analytics tool that helps businesses like Yelp, Uber, and Docusign convert, engage, and retain more users."
       - text: "We’ll include prompts along the way, so you can easily find what you’re looking for in Mixpanel, type your answers here, and unlock the next exploration. 
               If you ever feel stuck, just click the “Request a hint” and we’ll provide you with a hint."
-        delay: 8500
-      - text: "Learn to create some of the basic reports in Mixpanel. If you want to start with our learning videos feel free [here](https://mixpanelworkshops.teachable.com/)"
         delay: 6500
+      - text: "Learn to create some of the basic reports in Mixpanel. If you want to start with our learning videos feel free [here](https://mixpanelworkshops.teachable.com/)"
+        delay: 5500
       - text: "Let's start with the basics. Each report can answer different kinds of product questions with the events that are sent from our servers"
         delay: 5500
       - text: "An event is a data point that represents an interaction between a user and your product. Events can be a wide range of interactions. For example, a music service might track a new user signing up for an account or a user playing a song as an event."
